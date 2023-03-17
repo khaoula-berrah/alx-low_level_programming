@@ -12,7 +12,9 @@ int main(void)
 
 	for (f = 48; f <= 57; f++)
 	{
-		putchar(f + 44 + 32);
+		putchar(f);
+		putchar(',');
+		putchar(' ');
 	}
 	putchar('\n');
 	return (0);
