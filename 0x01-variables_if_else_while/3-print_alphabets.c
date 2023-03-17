@@ -12,9 +12,15 @@ int main(void)
 	int k = 65;
 
 	while (n <= 122)
+	{
 		putchar(n);
+		n++;
+	}
 	while (k <= 90)
+	{
 		putchar(k);
+		k++;
+	}
 	putchar('\n');
 
 	return (0);
