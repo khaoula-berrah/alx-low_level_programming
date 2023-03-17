@@ -3,17 +3,21 @@
 #include <stdio.h>
 /**
  *main - Entry point
- *Explain: 'smile in the mirror'
+ *Explain: 'hexadecimal'
  *Return: Always 0 (Success)
  */
 int main(void)
 {
-	int n = 122;
+	int k;
+	int s;
 
-	while (n >= 97)
+	for (k = 48; k <= 57; k++)
 	{
-		putchar(n);
-		n--;
+		putchar(k);
+	}
+	for (s = 97; s <= 102; s++)
+	{
+		putchar(s);
 	}
 	putchar('\n');
 	return (0);
