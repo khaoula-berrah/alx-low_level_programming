@@ -3,14 +3,14 @@
 #include <stdio.h>
 /**
  *main - Entry point
- *Explain: 'numberz 6'
+ *Explain: 'numberz'
  *Return: Always 0 (Success)
  */
 int main(void)
 {
 	int r;
 
-	for (r == 0; r <= 9; r++)
+	for (r = 0; r <= 9; r++)
 	{
 		putchar(r + 48);
 	}
