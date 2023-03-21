@@ -10,11 +10,12 @@ int main(void)
 
 	for (i = 0; i < 10; i++)
 	{
-		if ((i % 3 == 0) || (i % 5 == 0))
+		if ((i % 3 == 0) || (i % 5 == 0)
 		{
-			sm = sm + i;
+			sm += i;
 		}
 	}
 	printf("%d\n", sm);
+
 	return (0);
 }
