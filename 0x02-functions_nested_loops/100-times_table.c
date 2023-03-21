@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * print_times_table - prints the n times table, starting with 0
  * @n: number of the times table
@@ -16,9 +15,7 @@ void print_times_table(int n)
 			{
 				z = y * x;
 				if (y == 0)
-				{
 					_putchar(z + '0');
-				}
 				else if (z < 10 && y != 0)
 				{
 					_putchar(',');
@@ -27,7 +24,7 @@ void print_times_table(int n)
 					_putchar(' ');
 					_putchar(z + '0');
 				}
-				else if (z >= 10 && z < 100)
+				if (z >= 10 && z < 100)
 				{
 					_putchar(',');
 					_putchar(' ');
