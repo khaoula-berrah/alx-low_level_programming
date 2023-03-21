@@ -6,21 +6,21 @@
  */
 int main(void)
 {
-	int a = 0;
-	long l = 1, g = 2;
+	int a;
+	unsigned long l = 0, g = 1, sm;
 
-	while (a < 50)
+	for (a = 0; a < 50; a++)
 	{
-		if (a == 0)
-			printf("%ld", l);
-		else if (a == 1)
-			printf(", %ld", g);
+		sm = l + g;
+		printf("%lu", sm);
+
+		l = g;
+		g = sm;
+
+		if (a == 49)
+			printf("\n");
 		else
-		{
-			g += l;
-			l = g - l;
-			printf(", %ld", g);
-		}
-		++a;
+			printf(", ");
 	}
+	return (0);
 }
