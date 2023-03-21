@@ -1,12 +1,11 @@
 #include "main.h"
 /**
  * print_alphabet_x10 - prints 10 times the alphabet.
- *
  * Return: Always 0.
  */
 void print_alphabet_x10(void)
 {
-	int k = 'a';
+	char k = 'a';
 	int b = 0;
 
 	for (b = 0; b <= 10; b++)
