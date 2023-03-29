@@ -11,6 +11,7 @@
 char *rot13(char *s)
 {
 	char *p = s;
+
 	while (*p)
 	{
 		if (isalpha(*p))
