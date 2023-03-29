@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include <ctype.h>
 
 /**
  * rot13 - encoder rot13
@@ -11,16 +10,21 @@
 
 char *rot13(char *s)
 {
-	char *p = s;
+	int i;
+	int j;
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	while (*p)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (isalpha(*p))
+		for (j = 0; j < 52; j++)
 		{
-			char base = isupper(*p) ? 'A' : 'a';
-			*p = (((*p - base) + 13) % 26) + base;
+			if (s[i] == data1[j])
+			{
+				s[i] = datarot[j];
+				break;
+			}
 		}
-		p++;
 	}
 	return (s);
 }
