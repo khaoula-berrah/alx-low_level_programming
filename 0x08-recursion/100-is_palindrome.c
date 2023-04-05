@@ -2,7 +2,7 @@
 #include <string.h>
 
 int check(char *s, int x, int len);
-int len(char *s);
+int length(char *s);
 
 /**
  * check - check the string recusively
@@ -14,18 +14,11 @@ int len(char *s);
 
 int check(char *s, int x, int len)
 {
-	return (s[x] == s[len - x - 1]);
-}
-
-/**
- * len - returns the lent of a string
- * @s: input
- * Return: length of the string
- */
-
-int len(char *s)
-{
-	return strlen(s);
+	if (s[x] != s[len - 1])
+		return (0);
+	if (x >= len)
+		return (1);
+	return (check(s, x + 1, len - 1));
 }
 
 /**
@@ -36,15 +29,20 @@ int len(char *s)
 
 int is_palindrome(char *s)
 {
-	int i;
-	int length = len(s);
+	if (*s == 0)
+		return (1);
+	return (check(s, 0, length(s)));
+}
 
-	for (i = 0; i < length / 2; i++)
-	{
-		if (!check(s, i, length))
-		{
-			return (0);
-		}
-	}
-	return (1);
+/**
+ * length - returns the lent of a string
+ * @s: input
+ * Return: 1 or 0;
+ */
+
+int length(char *s)
+{
+	if (*s == '\0')
+		return (0);
+	return (1 + length(s + 1));
 }
