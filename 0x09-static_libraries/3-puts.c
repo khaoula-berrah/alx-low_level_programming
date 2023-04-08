@@ -9,8 +9,9 @@ void _puts(char *s)
 
 	while (s[n] != '\0')
 	{
-		_putchar(s[i]);
+		_putchar(s[n]);
 		n++;
 	}
+	_putchar('\n');
 }
 
