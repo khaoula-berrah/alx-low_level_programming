@@ -11,7 +11,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	int a, b, lent = 0, total_lent = 0;
+	int i, b, lent = 0, total_lent = 0;
 	char *str;
 
 	if (ac == 0 || av == NULL)
@@ -19,9 +19,9 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	}
 
-	for (a = 0; a < ac; a++)
+	for (i = 0; i < ac; i++)
 	{
-		lent = strlen(av[a]);
+		lent = strlen(av[i]);
 		total_lent += lent + 1;
 	}
 
@@ -32,10 +32,10 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	}
 
-	for (a = 0, b = 0; a < ac; a++)
+	for (i = 0, b = 0; i < ac; i++)
 	{
-		lent = strlen(av[a]);
-		strcpy(str + b, av[a]);
+		lent = strlen(av[i]);
+		strcpy(str + b, av[i]);
 		b += lent;
 		str[b++] = '\n';
 	}
