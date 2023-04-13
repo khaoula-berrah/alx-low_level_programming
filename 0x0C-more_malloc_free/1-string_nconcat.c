@@ -15,9 +15,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	size_t lenn1, lenn2;
 	char *reslt;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
 		s1 = "";
+	}
+	else if (s2 == NULL)
+	{
 		s2 = "";
 	}
 	lenn1 = strlen(s1);
