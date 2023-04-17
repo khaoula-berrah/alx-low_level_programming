@@ -1,7 +1,7 @@
 #ifndef DOG_H
 #define DOG_H
 
- /**
+/**
  * struct dog - a dog's basic info
  * @name: First member
  * @age: Second member
@@ -10,9 +10,9 @@
  */
 struct dog
 {
-      char *name;
-         float age;
-       char *owner;
+	char *name;
+	float age;
+	char *owner;
 };
 
 /**
@@ -27,3 +27,4 @@ char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
 
 #endif
+
