@@ -41,8 +41,8 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	while (temmp->next)
 		temmp = temmp->next;
-	 temmp->next = new_noode;
-	 return (new_noode);
+	temmp->next = new_noode;
+	return (new_noode);
 
 
 }
