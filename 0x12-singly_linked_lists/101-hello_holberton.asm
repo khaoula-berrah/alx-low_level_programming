@@ -1,21 +1,19 @@
-global _start
+global main
 
 section .data
-message db "Hello, Holberton", 0
-format db "%s\n", 0
+	hello db "Hello, Holberton", 0
+	nl db 10, 0
 
 section .text
-_start:
-; Set up stack frame
-mov rbp, rsp
+	global main
 
-; Call printf function
-mov edi, format
-mov rsi, message
-xor eax, eax
-call printf
+main:
+	push hello
+	call printf
+	add rsp, 8  ; clean up the stack
+	push nl
+	call printf
+	add rsp, 8  ; clean up the stack
 
-; Exit program
-xor edi, edi
-mov eax, 60
-syscall
+	mov eax, 0  ; return 0
+	ret
