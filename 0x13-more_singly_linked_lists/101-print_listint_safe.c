@@ -1,6 +1,6 @@
-#include "lists.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include "lists.h"
 
 /**
  * print_listint_safe - a function that prints a listint_t linked list.
@@ -10,22 +10,22 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-    size_t nm = 0;
-    long int dif;
+    size_t num = 0;
+    long int diff;
 
     while (head)
     {
-        dif = head - head->next;
-        nm++;
-        printf("[%p] %d\n", (void *)head, head->n);
-        if (dif > 0)
-            head = head->next;
-        else
-        {
-            printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-            break;
-        }
+	    diff = head - head->next;
+	    num++;
+	    printf("[%p] %d\n", (void *)head, head->n);
+	    if (diff > 0)
+		    head = head->next;
+	    else
+	    {
+		    printf("-> [%p] %d\n", (void *)head->next, head->next->n);
+		    break;
+	    }
     }
 
-    return (nm);
+    return (num);
 }
