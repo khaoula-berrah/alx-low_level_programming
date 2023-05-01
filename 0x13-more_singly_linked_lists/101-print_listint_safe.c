@@ -1,6 +1,6 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * print_listint_safe - a function that prints a listint_t linked list.
