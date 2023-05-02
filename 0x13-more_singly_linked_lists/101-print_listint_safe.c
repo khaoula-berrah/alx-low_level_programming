@@ -1,76 +1,74 @@
 #include "lists.h"
 #include <stdio.h>
-size_t listint_lenn(const listint_t *head);
-size_t print_listint_safee(const listint_t *head);
-
+#include <stdlib.h>
 /**
- * print_listint_safee - the prints specifier a listint list.
- * @head: the pointer to the head of the listint_t list.
- * Return: The number specifier of nodes in the list.
+ * loopeed_listint - write func that count the num of unique nodes
+ * @head: input
+ * Return: num of unique nodes, otherwise 0
  */
 
-size_t print_listint_safee(const listint_t *head)
+size_t loopeed_listint(const listint_t *head)
 {
-	size_t nod, i = 0;
-
-	nod = listint_lenn(head);
-	if (nod == 0)
-	{
-		for (nod = 0 ; head != NULL ; nod++)
-		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
-		}
-	} else
-		{
-			for (i = 0 ; i < nod ; i++)
-			{
-				printf("[%p] %d\n", (void *)head, head->n);
-				head = head->next;
-			}
-			printf("->[%p] %d\n", (void *)head, head->n);
-		}
-	return (nod);
-	}
-/**
- * listint_lenn - the count the number specifier of nodes in a looped.
- * listint_linked list.
- * @head: the pointer specifier to the head of listint_t to check.
- * Return: if the` list is not looped - 0.
- * Otherwise - the number of unique nodes in the list.
- */
-
-size_t listint_lenn(const listint_t *head)
-{
-	const listint_t *midd, *hh;
-	size_t nod = 1;
+	const listint_t *h11, *h22;
+	size_t nodee = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
-	midd = head->next;
-	hh = (head->next)->next;
-	while (hh)
-	{
-		if (midd == hh)
-		{
-			midd = head;
-			while (midd != hh)
-			{
-				nod++;
-				midd = midd->next;
-				hh = hh->next;
-			}
-			midd = midd->next;
-			while (midd != hh)
-			{
-				nod++;
-				midd = midd->next;
-			}
-			return (nod);
-		}
-		midd = midd->next;
-		hh = (hh->next)->next;
-	}
+	h11 = head->next;
+	h22 = head->next->next;
 
+	while (h22)
+	{
+		if (h11 == h22)
+		{
+			h11 = head;
+			while (h11 != h22)
+			{
+				nodee++;
+				h11 = h11->next;
+				h22 = h22->next;
+			}
+			h11 = h11->next;
+			while (h11 != h22)
+			{
+				nodee++;
+				h11 = h11->next;
+			}
+			return (nodee);
+		}
+		h11 = h11->next;
+		h22 = h22->next->next;
+	}
 	return (0);
+}
+
+
+/**
+ * print_listint_safe - the write a function that print a listint_t linked list.
+ * @head: input functions.
+ * Return: the number of nodes in the list.
+ */
+
+size_t print_listint_safe(const listint_t *head)
+{
+	size_t n = 0, nodee = loopeed_listint(head);
+
+	if (nodee == 0)
+	{
+		for (; head != NULL; nodee++)
+		{
+			printf("[%p] %d\n", (void *) head, head->n);
+			head = head->next;
+		}
+	}
+	else
+	{
+		for (; n < nodee; n++)
+		{
+			printf("[%p] %d\n", (void *) head, head->n);
+			head = head->next;
+		}
+		printf("-> [%p] %d\n", (void *) head, head->n);
+	}
+	return (nodee);
 }
