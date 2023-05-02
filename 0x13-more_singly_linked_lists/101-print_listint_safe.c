@@ -44,7 +44,7 @@ size_t loopeed_listint(const listint_t *head)
 
 
 /**
- * print_listint_safe - the write a function that print a listint_t linked list.
+ * print_listint_safe - the write function print a listint_t linked list.
  * @head: input functions.
  * Return: the number of nodes in the list.
  */
