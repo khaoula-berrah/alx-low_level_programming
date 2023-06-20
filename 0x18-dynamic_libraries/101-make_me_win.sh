@@ -1,3 +1,3 @@
 #!/bin/bash
-wget -q --output-document=$HOME/lib_inject.so https://github.com/khaoula-berrah/alx-low_level_programming/blob/master/0x18-dynamic_libraries/lib_inject.so?raw=true
-export LD_PRELOAD=$HOME/lib_inject.so
+wget -O /tmp/will.so https://github.com/khaoula-berrah/alx-low_level_programming/raw/master/0x18-dynamic_libraries/will.so
+export LD_PRELOAD=/tmp/will.so
