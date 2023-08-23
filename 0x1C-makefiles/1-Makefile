@@ -1,8 +1,12 @@
-# -*- MakeFile -*-
+# Define the compiler.
 
 CC = gcc
 
-SRC = main.c holberton.c
+# Define the .c files.
+
+SRC = main.c school.c
+
+# Build the whole command.
 
 all:
-	$(CC) $(SRC) -o holberton
+	$(CC) $(SRC) -o school

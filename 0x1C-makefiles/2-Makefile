@@ -1,12 +1,19 @@
-# -*- MakeFile -*-
-
+# Define the compiler.
 CC = gcc
 
-SRC = main.c holberton.c
+# Define the .c files.
+SRC = main.c school.c
 
-OBJ = $(SRC:%.c=%.o)
+# Define the output file name.
+NAME = school
 
-NAME = holberton
+# compile the .c files.
+OBJ: main.o school.o
+	$(CC) -c $(SRC)
 
-all: $(OBJ)
+# Build the whole command.
+all:
 	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	rm rf *.o
