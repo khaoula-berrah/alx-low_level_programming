@@ -1,4 +1,12 @@
-# -*- MakeFile -*-
+# Define the main program GCC that compiles C files.
 
-all:
-	gcc main.c holberton.c -o holberton
+G = gcc
+
+# Define flags.
+
+F = -o
+
+# Build the command.
+
+all: main.c school.c
+	${G} main.c school.c ${F} school
