@@ -1,19 +1,7 @@
-# Define the compiler.
 CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o) 
+NAME = holberton
 
-# Define the .c files.
-SRC = main.c school.c
-
-# Define the output file name.
-NAME = school
-
-# compile the .c files.
-OBJ: main.o school.o
-	$(CC) -c $(SRC)
-
-# Build the whole command.
-all:
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-clean:
-	rm rf *.o
